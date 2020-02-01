@@ -516,13 +516,13 @@ static void hidio_tick(t_hidio *x)
              x->x_instance+1, hidio_instance_count, right_now,
              last_execute_time[x->x_device_number]);*/
     }
-    for(i=0; i< element_count[x->x_device_number]; ++i)
+  /*    for(i=0; i< element_count[x->x_device_number]; ++i)
     {
-        /* TODO: since relative events need to be output every time, they need
-         * to be flagged when new relative events arrive.  Otherwise, it'll
-         * just spam out relative events no matter if anything new has
-         * arrived */
-        current_element = element[x->x_device_number][i];
+        // TODO: since relative events need to be output every time, they need
+         // to be flagged when new relative events arrive.  Otherwise, it'll
+         // just spam out relative events no matter if anything new has
+         // arrived 
+      current_element = element[x->x_device_number][i];
         if(current_element->previous_value != current_element->value)
         {
             hidio_output_event(x, current_element);
@@ -530,6 +530,7 @@ static void hidio_tick(t_hidio *x)
                 current_element->previous_value = current_element->value;
         }
     }
+ */
     if (x->x_started) 
     {
         clock_delay(x->x_clock, x->x_delay);
